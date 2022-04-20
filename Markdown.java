@@ -24,6 +24,9 @@ public class Markdown {
             if (openParen == -1) {
                 break;
             }
+            if (closeBracket + 1 != openParen) {
+                break;
+            }
             int closeParen = markdown.indexOf(")", openParen);
             if (closeParen == -1) {
                 break;
