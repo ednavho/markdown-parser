@@ -14,7 +14,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getLinksFromFile1() throws IOException{
-        Path fileName = Path.of(test-file.md);
+        Path fileName = Path.of("test-file.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = new ArrayList<>();
         links.add("https://something.com");
@@ -22,7 +22,7 @@ public class MarkdownParseTest {
         assertEquals(links, MarkdownParse.getLinks(content));
     }
 
-    /*@Test
+    @Test
     public void getLinksFromFile2() throws IOException{
         Path fileName = Path.of("test-file2.md");
         String content = Files.readString(fileName);
@@ -32,7 +32,28 @@ public class MarkdownParseTest {
         links.add("");
         links.add("https://google.com");
         assertEquals(links, MarkdownParse.getLinks(content));
-    }*/
+    }
     
+    @Test
+    public void getLinksFromFile3() throws IOException{
+        Path fileName = Path.of("test-file3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = new ArrayList<>();
+        links.add("https://something.com");
+        links.add("some-thing.html");
+        links.add("https://google.com");
+        assertEquals(links, MarkdownParse.getLinks(content));
+    }
+
+    @Test
+    public void getLinksFromFile4() throws IOException{
+        Path fileName = Path.of("test-file4.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = new ArrayList<>();
+        links.add("https://something.com");
+        links.add("some-thing.html");
+        links.add("https://google.com");
+        assertEquals(links, MarkdownParse.getLinks(content));
+    }
     
 }
