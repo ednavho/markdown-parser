@@ -31,6 +31,11 @@ public class Markdown {
             if (closeParen == -1) {
                 break;
             }
+            char charBefore = markdown.charAt(openBracket - 1);
+            if (charBefore == '!') {
+                currentIndex = closeParen + 1;
+                continue;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
             //System.out.println(currentIndex);
