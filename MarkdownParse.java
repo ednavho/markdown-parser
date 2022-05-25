@@ -21,7 +21,7 @@ public class MarkdownParse {
                 openParenCount--;
                 lastCloseParenIndex = closeParen;
             }
-            closeParen++;
+            
         }
         return lastCloseParenIndex;
     }
